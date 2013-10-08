@@ -29,11 +29,8 @@ def commentall(posts):
             user = json.loads(req.text)
             message = 'Congratulations! Phode Ho. %s :D' % user['first_name']
             payload = {'access_token': TOKEN, 'message': message}
-            #doComment = requests.post(comments_url, data=payload)
+            doComment = requests.post(comments_url, data=payload)
 
             print "Congratulated %s for (%s)" % (user['first_name'], post['message'])
-            print "-----------------------------------------"
-            print user['first_name']
-            print "-----------------------------------------"
 
 commentall(get_posts())
